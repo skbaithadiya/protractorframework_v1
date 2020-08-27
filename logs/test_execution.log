@@ -1,0 +1,4 @@
+[2020-08-27T16:22:49.043] [INFO] protractor - Input username: user2
+[2020-08-27T16:22:49.045] [INFO] protractor - Input password: pass2
+[2020-08-27T16:22:49.045] [INFO] protractor - Clicked on Login Button
+[2020-08-27T16:22:49.046] [INFO] protractor - logoutBtn.isDisplayed(): [object Object]
