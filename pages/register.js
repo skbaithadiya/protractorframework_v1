@@ -12,9 +12,13 @@ let register = function() {
 
     this.fillRegisterForm = function (fName, lName, user, pass){
         firstName.sendKeys(fName);
+        log.info(`Input firstname: ${fName}`);
         lastName.sendKeys(lName);
+        log.info(`Input lastname: ${lName}`);
         username.sendKeys(user);
+        log.info(`Input username: ${user}`);
         password.sendKeys(pass);
+        log.info(`Input password: ${pass}`);
     };
 
     this.submitRegistrationForm = function () {

@@ -1,8 +1,6 @@
 var logger = require('../utilities/logger');
 var log = logger.logger();
 
-loginlink = "https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login";
-
 let login = function() {
 
     let username = element(by.model('vm.username'));
