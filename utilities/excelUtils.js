@@ -4,7 +4,7 @@ var log = logger.logger();
 
 module.exports = function(filename) {
     // reading data from excel file
-    this.excelRead = function(sheetname, tc_id, column_header){
+    this.excelRead = async function(sheetname, tc_id, column_header){
         var data = undefined;
         const workbook = new excel.Workbook();
         return workbook.xlsx.readFile(filename)
@@ -21,7 +21,7 @@ module.exports = function(filename) {
             });
     },
     // writing data in excel file
-    this.excelWrite = function(sheetname, tc_id, column_header, result){
+    this.excelWrite = async function(sheetname, tc_id, column_header, result){
         const workbook = new excel.Workbook();
         return workbook.xlsx.readFile(filename)
             .then(function(){
@@ -36,7 +36,7 @@ module.exports = function(filename) {
         // return this;
     },
     // reading entire column data from excel file by column_header name
-    this.excelReadEntireColumn = function(sheetname, column_header){
+    this.excelReadEntireColumn = async function(sheetname, column_header){
         var data = undefined;
         const workbook = new excel.Workbook();
         return workbook.xlsx.readFile(filename)
@@ -56,7 +56,7 @@ module.exports = function(filename) {
             });
     },
     // reading entire row data from excel file by tc_id name
-    this.excelReadEntireRow = function(sheetname, tc_id){
+    this.excelReadEntireRow = async function(sheetname, tc_id){
         var data = undefined;
         const workbook = new excel.Workbook();
         return workbook.xlsx.readFile(filename)

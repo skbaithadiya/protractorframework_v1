@@ -8,24 +8,20 @@ let login = require("../pages/login");
 let register = require("../pages/register");
 let testDataPath = process.cwd() + '\\testData';
 let excelFilePath = testDataPath + '\\loginData.xlsx';
-let sheetName = 'loginTC';
+let sheetName = 'registerTC';
 
 
 describe('Login - Valid User', function() {
    
-    it('should login successfully', function() {
-        browser.waitForAngularEnabled(true);
+    it('should login successfully', async function() {
         loginlink = "https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login";
         tc_id = 'tc1';
-        tc_username = excel(excelFilePath).excelRead(sheetName, tc_id, 'username');
-        tc_password = excel(excelFilePath).excelRead(sheetName, tc_id, 'password');
-        // browser.waitForAngularEnabled(false);
+        tc_username = await excel(excelFilePath).excelRead(sheetName, tc_id, 'username');
+        tc_password = await excel(excelFilePath).excelRead(sheetName, tc_id, 'password');
         browser.get(loginlink);
         login.doLogin(tc_username, tc_password);
         expect(home.isLoginSuccess()).toBe(true);
-        // browser.waitForAngularEnabled(false);
-        excel(excelFilePath).excelWrite(sheetName, tc_id, 'test_result', 'Passed');
-        // browser.waitForAngularEnabled(true);
+        await excel(excelFilePath).excelWrite(sheetName, tc_id, 'test_result', 'Passed');
         
     });
 

@@ -13,7 +13,7 @@ exports.config = {
             shardTestFiles: true,
             maxInstances: 1,
             sequential: true,
-            browserName: 'chrome',
+            browserName: 'firefox',
             specs: ['../tests/login_spec.js']
         }
     ],
